@@ -8,10 +8,19 @@
  * out = not in
  */
 
+//  Nand
+/*
+ * a b out
+ * 0 0 1  <-
+ * 0 1 1
+ * 1 0 1
+ * 1 1 0  <-
+ */
+
 CHIP Not {
     IN in;
     OUT out;
 
     PARTS:
-    // Put your code here:
+    Nand(a=in, b=in, out=out);
 }

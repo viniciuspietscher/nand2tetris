@@ -9,10 +9,15 @@
  *       0 otherwise
  */
 
+//  Or = NOT(NOT(a) AND NOT(b))
+
 CHIP Or {
     IN a, b;
     OUT out;
 
     PARTS:
-    // Put your code here:
+    Not(in=a, out=na);
+    Not(in=b, out=nb);
+    And(a=na, b=nb, out=andout);
+    Not(in=andout, out=out);
 }
